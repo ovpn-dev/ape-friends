@@ -185,7 +185,7 @@ const ApeModeScreen: React.FC = () => {
             aria-label="Previous mode"
           />
           <Image
-            src="/src/assets/Bitcoin_3D.png" // Ensure this path is correct
+            src="./Bitcoin_3D.png" // Ensure this path is correct
             alt="Bitcoin"
             boxSize="100px"
           />

@@ -8,7 +8,7 @@ import { PiYoutubeLogoLight } from "react-icons/pi";
 const HeroScreen: React.FC = () => {
   return (
     <Box
-      bgImage="url('/src/assets/monkeyHeromid.png')" // Ensure this path is correct
+      bgImage="url('./monkeyHeromid.png')" // Ensure this path is correct
       bgPosition="center"
       bgSize="cover"
       minH="100vh"

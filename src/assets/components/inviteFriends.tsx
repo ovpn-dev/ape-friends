@@ -48,20 +48,12 @@ const InviteFriendsComponent: React.FC = () => {
             _hover={{ bg: "blue.700" }}
           >
             <HStack spacing={3}>
-              <Image
-                src="/src/assets/icons8-friends-96.png"
-                alt="Invite icon"
-              />
+              <Image src="./icons8-friends-96.png" alt="Invite icon" />
               <VStack align={"start"}>
                 {" "}
                 <Text>Invite a friend</Text>
                 <HStack>
-                  <Image
-                    src="/src/assets/Bitcoin_3D.png"
-                    alt="Bitcoin"
-                    h={5}
-                    w={5}
-                  />
+                  <Image src="./Bitcoin_3D.png" alt="Bitcoin" h={5} w={5} />
                   <Text color="orange.300" fontSize="10px">
                     +100,000 for you and your friend
                   </Text>
@@ -101,7 +93,7 @@ const InviteFriendsComponent: React.FC = () => {
           >
             <HStack spacing={3}>
               <Image
-                src="/src/assets/icons8-administrator-male-48.png"
+                src="./icons8-administrator-male-48.png"
                 alt="Friend icon"
               />
               <VStack>
@@ -119,16 +111,12 @@ const InviteFriendsComponent: React.FC = () => {
           <Button
             colorScheme="yellow"
             flex={1}
-            leftIcon={
-              <Image src="/src/assets/person_add_24dp.png" alt="Invite icon" />
-            }
+            leftIcon={<Image src="./person_add_24dp.png" alt="Invite icon" />}
           >
             INVITE A FRIEND
           </Button>
           <IconButton
-            icon={
-              <Image src="/src/assets/content_copy_24dp.png" alt="Copy icon" />
-            }
+            icon={<Image src="./content_copy_24dp.png" alt="Copy icon" />}
             colorScheme="yellow"
             aria-label="Copy invite link"
           />

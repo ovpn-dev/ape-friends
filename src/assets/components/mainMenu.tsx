@@ -13,7 +13,7 @@ const MainMenu: React.FC = () => {
         <VStack spacing={4} align="center">
           <HStack gap={2}>
             <Image
-              src="/src/assets/Bitcoin_3D.png" // Ensure this path is correct
+              src="./Bitcoin_3D.png" // Ensure this path is correct
               alt="Bitcoin"
               boxSize="55px"
             />

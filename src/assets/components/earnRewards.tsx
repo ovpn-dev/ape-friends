@@ -41,7 +41,7 @@ const RewardButton: React.FC<RewardButtonProps> = ({
       <VStack align={"start"} p={2}>
         <Text>{label}</Text>
         <HStack>
-          <Image src="/src/assets/Bitcoin_3D.png" alt="Bitcoin" h={5} w={5} />{" "}
+          <Image src="./Bitcoin_3D.png" alt="Bitcoin" h={5} w={5} />{" "}
           <Text color="yellow" fontSize="10px">
             {amount}
           </Text>
@@ -64,7 +64,7 @@ const DailyRewardsComponent: React.FC = () => {
       p={4}
     >
       <VStack spacing={4} align="stretch">
-        <Image src="/src/assets/Bitcoin_3D.png" alt="Bitcoin" mx="auto" />
+        <Image src="./Bitcoin_3D.png" alt="Bitcoin" mx="auto" />
         <Text
           color="yellow.400"
           fontSize="2xl"
@@ -77,7 +77,7 @@ const DailyRewardsComponent: React.FC = () => {
         <RewardButton
           label="Daily Reward"
           amount="+100,000"
-          iconSrc="/src/assets/icons8-friends-96.png"
+          iconSrc="./icons8-friends-96.png"
           onClick={onToggle}
         />
         <Collapse in={isOpen} animateOpacity>
@@ -108,12 +108,7 @@ const DailyRewardsComponent: React.FC = () => {
               >
                 DAY {day}
                 <HStack color="white" justify="space-around">
-                  <Image
-                    src="/src/assets/Bitcoin_3D.png"
-                    alt="Bitcoin"
-                    h={5}
-                    w={5}
-                  />
+                  <Image src="./Bitcoin_3D.png" alt="Bitcoin" h={5} w={5} />
                   <Text fontSize="8px">500</Text>
                 </HStack>
               </Box>
@@ -127,19 +122,19 @@ const DailyRewardsComponent: React.FC = () => {
         <RewardButton
           label="Daily Combo"
           amount="+100,000"
-          iconSrc="/src/assets/icons8-telegram.png"
+          iconSrc="./icons8-telegram.png"
           onClick={() => {}}
         />
         <RewardButton
           label="Subscribe to Tik Tok"
           amount="+100,000"
-          iconSrc="/src/assets/icons8-tiktok.png"
+          iconSrc="./icons8-tiktok.png"
           onClick={() => {}}
         />
         <RewardButton
           label="Subscribe to Discord"
           amount="+100,000"
-          iconSrc="/src/assets/icons8-discord.png"
+          iconSrc="./icons8-discord.png"
           onClick={() => {}}
         />
       </VStack>

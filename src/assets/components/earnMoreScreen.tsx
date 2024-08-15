@@ -37,7 +37,7 @@ interface EarnOption {
 const earnOptions: EarnOption[] = [
   // Example of an image icon
   {
-    icon: "/src/assets/icons8-friends-96.png",
+    icon: "./icons8-friends-96.png",
     text: "Add 10 new friends (0/10)",
     reward: 100000,
     color: "teal.500",
@@ -180,7 +180,7 @@ const EarnMoreCoinsScreen: React.FC = () => {
     >
       <VStack spacing={6} align="stretch">
         <Image
-          src="/src/assets/Bitcoin_3D.png" // Ensure this path is correct
+          src="./Bitcoin_3D.png" // Ensure this path is correct
           alt="Bitcoin"
           boxSize="100px"
           alignSelf="center"

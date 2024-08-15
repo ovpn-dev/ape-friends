@@ -26,9 +26,9 @@ interface Step {
 
 // Define the images used in the steps
 const apeImages: string[] = [
-  "src/assets/Mask_group.png",
-  "src/assets/Mask_group(1).png",
-  "src/assets/Mask_group(2).png",
+  "./Mask_group.png",
+  "./Mask_group(1).png",
+  "./Mask_group(2).png",
 ];
 
 const AppScreen: React.FC = () => {
