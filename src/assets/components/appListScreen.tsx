@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   VStack,
@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 const ApeWithFriendsList: React.FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true); // Initial loading state
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [listData] = useState<string[]>([
     "Pre-launch",
     "Referrals",
@@ -24,6 +24,14 @@ const ApeWithFriendsList: React.FC = () => {
     "Web Game",
     "Listing on Exchanges - Jan 3, 2025",
   ]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <VStack
@@ -50,9 +58,15 @@ const ApeWithFriendsList: React.FC = () => {
             ))}
           </VStack>
         </RadioGroup>
-        <Text>Loading</Text>
-        {isLoading && <Progress value={50} colorScheme="yellow" />}
       </Box>
+      {isLoading ? (
+        <Box w="100%">
+          <Text mb={2}>Loading...</Text>
+          <Progress isIndeterminate colorScheme="yellow" />
+        </Box>
+      ) : (
+        <Text>Loaded successfully!</Text>
+      )}
     </VStack>
   );
 };

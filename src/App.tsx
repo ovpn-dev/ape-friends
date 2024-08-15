@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import AppScreen from "./assets/components/appScreen";
 import Nav from "./assets/components/nav";
@@ -28,7 +25,6 @@ import AddNewGraphicTimerComponent from "./assets/components/addNewGraphics";
 import MainMenu from "./assets/components/mainMenu";
 
 function App() {
-  const [count, setCount] = useState(0);
   const location = useLocation();
 
   const showNavbar = location.pathname !== "/dashboard";

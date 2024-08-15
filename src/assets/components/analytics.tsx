@@ -10,7 +10,21 @@ import {
 } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 
-const StatCard = ({ title, value, subtext, change }) => (
+// Define types for StatCard props
+interface StatCardProps {
+  title: string;
+  value: string;
+  subtext: string;
+  change: string;
+}
+
+// StatCard component
+const StatCard: React.FC<StatCardProps> = ({
+  title,
+  value,
+  subtext,
+  change,
+}) => (
   <Box bg="gray.800" borderRadius="md" p={4}>
     <Flex justifyContent="space-between" alignItems="flex-start" mb={2}>
       <Text color="gray.300" fontSize="sm">
@@ -35,7 +49,8 @@ const StatCard = ({ title, value, subtext, change }) => (
   </Box>
 );
 
-const AnalyticsComponent = () => {
+// AnalyticsComponent component
+const AnalyticsComponent: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #0D1B2A, #2a4365)"

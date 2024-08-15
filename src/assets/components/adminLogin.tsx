@@ -11,7 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
-const AdminLoginComponent = () => {
+// Define functional component type
+const AdminLoginComponent: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #0D1B2A, #2a4365)"

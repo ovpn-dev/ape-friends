@@ -18,7 +18,7 @@ import {
 import { SearchIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
 
-const UserManagementComponent = () => {
+const UserManagementComponent: React.FC = () => {
   const users = [
     { username: "User 1", email: "user1@example.com", role: "Admin" },
     { username: "User 1", email: "user1@example.com", role: "Admin" },

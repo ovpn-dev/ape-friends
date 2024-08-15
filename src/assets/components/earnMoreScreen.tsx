@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState } from "react";
 import {
   Box,
   VStack,
@@ -10,7 +10,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalCloseButton,
   useDisclosure,
   HStack,
 } from "@chakra-ui/react";

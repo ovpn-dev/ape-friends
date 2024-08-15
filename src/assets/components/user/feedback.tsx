@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Box,
-  VStack,
-  Text,
-  Input,
-  Button,
-  Checkbox,
-  HStack,
-  Link,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
-const FeedbackComponent = () => {
+const FeedbackComponent: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #0D1B2A, #2a4365)"

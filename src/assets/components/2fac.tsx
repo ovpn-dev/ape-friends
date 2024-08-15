@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  Box,
-  VStack,
-  Text,
-  Input,
-  Button,
-  Checkbox,
-  HStack,
-  Link,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
-const TwoFA = () => {
+// Define the functional component type
+const TwoFA: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #0D1B2A, #2a4365)"
@@ -46,7 +38,7 @@ const TwoFA = () => {
             width="100%"
             mt={4}
             as={RouterLink}
-            to={"/usrmgmt"}
+            to="/usrmgmt"
           >
             VERIFY CODE
           </Button>
@@ -55,7 +47,7 @@ const TwoFA = () => {
             colorScheme="yellow"
             width="100%"
             as={RouterLink}
-            to={"/login"}
+            to="/login"
             mt={4}
           >
             BACK TO LOGIN

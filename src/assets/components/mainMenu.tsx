@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  VStack,
-  Text,
-  Image,
-  Input,
-  Button,
-  Select,
-  HStack,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, Image, Button, HStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const MainMenu: React.FC = () => {
