@@ -1,26 +1,26 @@
 import {
   Text,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
+  // IconButton,
+  // Menu,
+  // MenuButton,
+  // MenuItem,
+  // MenuList,
   Flex,
   HStack,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, CloseIcon } from "@chakra-ui/icons";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import {
-  AiOutlineRobot,
-  AiOutlineReload,
-  AiOutlineInfoCircle,
-} from "react-icons/ai";
-import { Link as RouterLink } from "react-router-dom";
+// import { ChevronDownIcon, CloseIcon } from "@chakra-ui/icons";
+// import { BsThreeDotsVertical } from "react-icons/bs";
+// import {
+//   AiOutlineRobot,
+//   AiOutlineReload,
+//   AiOutlineInfoCircle,
+// } from "react-icons/ai";
+// import { Link as RouterLink } from "react-router-dom";
 
 export default function Nav() {
-  const broGoBack = () => {
-    window.history.back();
-  };
+  // const broGoBack = () => {
+  //   window.history.back();
+  // };
   return (
     <>
       {" "}
@@ -34,27 +34,27 @@ export default function Nav() {
         justify="space-between"
       >
         <HStack spacing={2}>
-          <IconButton
+          {/* <IconButton
             icon={<CloseIcon />}
             onClick={broGoBack}
             aria-label="Cancel"
             variant="unstyled"
             color="white"
             fontSize="lg"
-          />
+          /> */}
           <Text fontWeight="bold" fontSize="md" color={"white"}>
             Ape with Friends
           </Text>
         </HStack>
         <HStack spacing={3}>
-          <IconButton
+          {/* <IconButton
             icon={<ChevronDownIcon />}
             aria-label="Expand"
             variant="unstyled"
             color="white"
             fontSize="lg"
-          />
-          <Menu>
+          /> */}
+          {/* <Menu>
             <MenuButton
               as={IconButton}
               icon={<BsThreeDotsVertical />}
@@ -82,7 +82,7 @@ export default function Nav() {
                 TERMS OF USE
               </MenuItem>
             </MenuList>
-          </Menu>
+          </Menu> */}
         </HStack>
       </Flex>{" "}
     </>
