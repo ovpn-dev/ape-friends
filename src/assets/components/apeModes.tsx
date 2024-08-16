@@ -183,11 +183,12 @@ const ApeModeScreen: React.FC = () => {
             position="absolute"
             left={0}
             aria-label="Previous mode"
+            variant={"simple"}
           />
           <Image
             src="./Bitcoin_3D.png" // Ensure this path is correct
             alt="Bitcoin"
-            boxSize="100px"
+            boxSize={40}
           />
           <IconButton
             icon={<ChevronRightIcon />}
@@ -195,6 +196,7 @@ const ApeModeScreen: React.FC = () => {
             position="absolute"
             right={0}
             aria-label="Next mode"
+            variant={"simple"}
           />
         </HStack>
 

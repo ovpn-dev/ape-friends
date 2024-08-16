@@ -13,16 +13,16 @@ import {
   useDisclosure,
   HStack,
 } from "@chakra-ui/react";
-import {
-  FaGift,
-  FaTelegram,
-  FaLink,
-  FaTwitter,
-  FaYoutube,
-  FaInstagram,
-  FaTiktok,
-  FaDiscord,
-} from "react-icons/fa";
+// import {
+//   FaGift,
+//   FaTelegram,
+//   FaLink,
+//   FaTwitter,
+//   FaYoutube,
+//   FaInstagram,
+//   FaTiktok,
+//   FaDiscord,
+// } from "react-icons/fa";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 // Define TypeScript interfaces for earn options
@@ -43,49 +43,43 @@ const earnOptions: EarnOption[] = [
     color: "teal.500",
   },
   {
-    icon: FaGift,
-    text: "Add 10 new friends (0/10)",
-    reward: 100000,
-    color: "blue.500",
-  },
-  {
-    icon: FaTelegram,
+    icon: "./icons8-telegram.png",
     text: "Join us on Telegram",
     reward: 150000,
     color: "blue.600",
   },
   {
-    icon: FaLink,
+    icon: "./Bitcoin_3D.png",
     text: "Choose Blockchain",
     reward: 100000,
     color: "orange.500",
   },
   {
-    icon: FaTwitter,
+    icon: "./icons8-x.png",
     text: "Subscribe to X",
     reward: 100000,
     color: "gray.700",
   },
   {
-    icon: FaYoutube,
+    icon: "./icons8-youtube.png",
     text: "Subscribe to YouTube",
     reward: 100000,
     color: "red.500",
   },
   {
-    icon: FaInstagram,
+    icon: "./icons8-instagram.png",
     text: "Subscribe to Instagram",
     reward: 100000,
     color: "purple.500",
   },
   {
-    icon: FaTiktok,
+    icon: "./icons8-tiktok.png",
     text: "Subscribe to TikTok",
     reward: 100000,
     color: "black",
   },
   {
-    icon: FaDiscord,
+    icon: "./icons8-discord.png",
     text: "Subscribe to Discord",
     reward: 100000,
     color: "indigo.500",
@@ -112,12 +106,14 @@ const EarnButton: React.FC<EarnButtonProps> = ({ option, onOpen }) => {
       // rightIcon={<Text>›</Text>}
       width="full"
       h="auto"
+      p={1}
       bg="whiteAlpha.200"
       _hover={{ bg: "whiteAlpha.300" }}
       onClick={onOpen}
       color={"white"}
+      justifyContent={"space-between"}
     >
-      <VStack align="start">
+      <VStack align="center">
         <Text>{option.text}</Text>
         <Text color="yellow.400">+{option.reward.toLocaleString()}</Text>
       </VStack>

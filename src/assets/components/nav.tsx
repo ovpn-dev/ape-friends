@@ -53,8 +53,8 @@ export default function Nav() {
             variant="unstyled"
             color="white"
             fontSize="lg"
-          /> */}
-          {/* <Menu>
+          />
+          <Menu>
             <MenuButton
               as={IconButton}
               icon={<BsThreeDotsVertical />}

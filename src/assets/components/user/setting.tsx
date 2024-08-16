@@ -8,12 +8,14 @@ import {
   Flex,
   Icon,
   useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
 
 const Settings: React.FC = () => {
   const bg = useColorModeValue("gray.100", "gray.800");
   const sectionBg = useColorModeValue("white", "gray.700");
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box bg={bg} minHeight="100vh" p={4}>
@@ -32,8 +34,12 @@ const Settings: React.FC = () => {
               <Switch colorScheme="green" />
             </Flex>
             <Flex justify="space-between" align="center">
-              <Text>Dark Mode</Text>
-              <Switch colorScheme="green" />
+              <Text>{colorMode === "light" ? "Light Mode" : "Dark Mode"}</Text>
+              <Switch
+                colorScheme="green"
+                isChecked={colorMode === "dark"}
+                onChange={toggleColorMode}
+              />
             </Flex>
           </VStack>
         </Box>

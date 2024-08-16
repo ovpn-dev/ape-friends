@@ -15,7 +15,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { FaPager } from "react-icons/fa";
+import { MdOutlinePermDeviceInformation } from "react-icons/md";
 
 interface Step {
   image: string;
@@ -103,10 +103,11 @@ const AppScreen: React.FC = () => {
             textAlign={"center"}
             alignSelf={"center"}
             justifySelf={"center"}
+            bg={"#F2FDFF"}
           >
-            <Stack align={"center"}>
+            <Stack align={"center"} mt={5}>
               {" "}
-              <FaPager size={"25px"} />
+              <MdOutlinePermDeviceInformation size={"25px"} />
             </Stack>
 
             <ModalHeader>Grant Permission</ModalHeader>
@@ -118,7 +119,7 @@ const AppScreen: React.FC = () => {
                 inventory.
               </Text>
             </ModalBody>
-            <ModalFooter>
+            <ModalFooter mb={2}>
               <Button variant="ghost" rounded={"3xl"} onClick={onClose}>
                 CANCEL
               </Button>{" "}
