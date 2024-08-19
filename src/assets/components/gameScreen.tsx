@@ -11,34 +11,35 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { MdHome, MdGroup, MdAssignment } from "react-icons/md";
-import { GiUpgrade } from "react-icons/gi";
-import { GiPsychicWaves } from "react-icons/gi";
+import { GiUpgrade, GiPsychicWaves } from "react-icons/gi";
 
 // Placeholder components for different pages
-const Home = () => <Text>Home Page Content</Text>;
-const Upgrade = () => <Text>Upgrade Page Content</Text>;
-const Friends = () => <Text>Friends Page Content</Text>;
-const Tasks = () => <Text>Tasks Page Content</Text>;
-const Airdrop = () => <Text>Airdrop Page Content</Text>;
+const Home: React.FC = () => <Text>Home Page Content</Text>;
+const Upgrade: React.FC = () => <Text>Upgrade Page Content</Text>;
+const Friends: React.FC = () => <Text>Friends Page Content</Text>;
+const Tasks: React.FC = () => <Text>Tasks Page Content</Text>;
+const Airdrop: React.FC = () => <Text>Airdrop Page Content</Text>;
 
-const GameInterface = () => {
-  const [balance, setBalance] = useState(350590);
-  const [energy, setEnergy] = useState(1000);
-  const [activePage, setActivePage] = useState("home");
+type MenuItem = {
+  icon: React.ElementType;
+  label: string;
+  key: string;
+  component: React.FC;
+};
+
+const GameInterface: React.FC = () => {
+  const [balance, setBalance] = useState<number>(350590);
+  const [energy, setEnergy] = useState<number>(1000);
+  const [activePage, setActivePage] = useState<string>("home");
 
   const handleTap = () => {
     setBalance((prev) => prev + 1);
     setEnergy((prev) => Math.max(0, prev - 1));
   };
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { icon: MdHome, label: "HOME", key: "home", component: Home },
-    {
-      icon: GiUpgrade,
-      label: "UPGRADE",
-      key: "upgrade",
-      component: Upgrade,
-    },
+    { icon: GiUpgrade, label: "UPGRADE", key: "upgrade", component: Upgrade },
     { icon: MdGroup, label: "FRIENDS", key: "friends", component: Friends },
     { icon: MdAssignment, label: "TASKS", key: "tasks", component: Tasks },
     {
@@ -83,6 +84,7 @@ const GameInterface = () => {
               fontWeight={400}
               rounded={"3xl"}
               size="lg"
+              onClick={handleTap}
             >
               <VStack p={5}>
                 <Text fontSize={"8px"}>EARN PER TAP</Text>
@@ -120,7 +122,6 @@ const GameInterface = () => {
 
         {activePage === "home" && (
           <>
-            {" "}
             <Text textAlign="center" fontWeight="bold">
               King Kong Mode
             </Text>
