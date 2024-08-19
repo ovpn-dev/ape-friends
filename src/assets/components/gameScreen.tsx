@@ -128,7 +128,7 @@ const GameInterface: React.FC = () => {
         {activePage === "home" && (
           <>
             <Text textAlign="center" fontWeight="bold" color={"yellow"}>
-              King Kong Mode
+              Spider Monkey Mode (Level 1)
             </Text>
             <Flex justify="center" align="center" flex={1}>
               <Circle

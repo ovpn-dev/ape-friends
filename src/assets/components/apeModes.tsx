@@ -6,6 +6,7 @@ import {
   Image,
   Heading,
   HStack,
+  Button,
   IconButton,
 } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
@@ -201,6 +202,9 @@ const ApeModeScreen: React.FC = () => {
         </HStack>
 
         <ModeContent mode={modeData[currentModeIndex]} />
+        <Button colorScheme="yellow" rounded={"3xl"}>
+          PURCHASE
+        </Button>
       </VStack>
     </Box>
   );
