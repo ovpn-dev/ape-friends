@@ -1,11 +1,10 @@
 import "./App.css";
 import AppScreen from "./assets/components/appScreen";
 import Nav from "./assets/components/nav";
-import ApeWithFriendsList from "./assets/components/appListScreen";
 import HeroScreen from "./assets/components/heroScreen";
 import EarnMoreCoinsScreen from "./assets/components/earnMoreScreen";
 import ApeModeScreen from "./assets/components/apeModes";
-import DailyRewardsComponent from "./assets/components/earnRewards";
+import DailyRewardsComponent from "./assets/components/dailyRewards";
 import ComingSoonComponent from "./assets/components/comingSoon";
 import InviteFriendsComponent from "./assets/components/inviteFriends";
 import AdminLoginComponent from "./assets/components/adminLogin";
@@ -23,6 +22,7 @@ import Settings from "./assets/components/user/setting";
 import ApeWithFriendsFeatures from "./assets/components/apeWithFriends";
 import AddNewGraphicTimerComponent from "./assets/components/addNewGraphics";
 import MainMenu from "./assets/components/mainMenu";
+import GameInterface from "./assets/components/gameScreen";
 
 function App() {
   const location = useLocation();
@@ -37,7 +37,7 @@ function App() {
         <Route path="/dashboard" element={<AnalyticsComponent />} />
         <Route path="/login" element={<AdminLoginComponent />} />
         <Route path="/forgetpaswd" element={<PasswordRecovery />} />
-        <Route path="/afl" element={<ApeWithFriendsList />} />
+        <Route path="/hero" element={<HeroScreen />} />
         <Route path="/csc" element={<ComingSoonComponent />} />
         <Route path="/emcs" element={<EarnMoreCoinsScreen />} />
         <Route path="/apems" element={<ApeModeScreen />} />
@@ -57,6 +57,7 @@ function App() {
           element={<AddNewGraphicTimerComponent />}
         />
         <Route path="/mainmenu" element={<MainMenu />} />
+        <Route path="/play" element={<GameInterface />} />
       </Routes>
     </>
   );

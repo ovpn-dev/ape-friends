@@ -31,7 +31,7 @@ const RewardButton: React.FC<RewardButtonProps> = ({
     h={"auto"}
     width="100%"
     justifyContent="space-between"
-    bg="blue.800"
+    bg="gray.400"
     color="white"
     _hover={{ bg: "blue.700" }}
   >
@@ -88,7 +88,7 @@ const DailyRewardsComponent: React.FC = () => {
                 as="button"
                 border="1px solid #DACC3E" // Border color
                 borderRadius={"lg"}
-                backgroundColor="transparent" // Make background transparent
+                bg="gray.400" // Make background transparent
                 _hover={{
                   backgroundColor: "#DACC3E", // Yellow color on hover
                   color: "white", // Text color on hover for contrast

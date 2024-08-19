@@ -104,9 +104,9 @@ const AppScreen: React.FC = () => {
             alignSelf={"center"}
             justifySelf={"center"}
             bg={"#F2FDFF"}
+            color={"black"}
           >
             <Stack align={"center"} mt={5}>
-              {" "}
               <MdOutlinePermDeviceInformation size={"25px"} />
             </Stack>
 
@@ -120,14 +120,20 @@ const AppScreen: React.FC = () => {
               </Text>
             </ModalBody>
             <ModalFooter mb={2}>
-              <Button variant="ghost" rounded={"3xl"} onClick={onClose}>
+              <Button
+                variant="ghost"
+                as={RouterLink}
+                to={"/login"}
+                rounded={"3xl"}
+                onClick={onClose}
+              >
                 CANCEL
               </Button>{" "}
               <Button
                 colorScheme="yellow"
                 mr={3}
                 as={RouterLink}
-                to={"/login"}
+                to={"/hero"}
                 onClick={onClose}
                 rounded={"3xl"}
               >

@@ -139,18 +139,32 @@ const EarnModal: React.FC<EarnModalProps> = ({ isOpen, onClose, option }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
-      <ModalOverlay />
-      <ModalContent bg="gray.800" color="white" textAlign="center">
-        <ModalHeader alignSelf={"center"} justifySelf={"center"}>
-          <HStack spacing={3}>
+      <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
+      <ModalContent bg="#0D2844" color="white" textAlign="center">
+        <ModalHeader alignSelf={"center"} justifySelf={"center"}></ModalHeader>
+        <ModalBody>
+          {" "}
+          <VStack spacing={3}>
             {renderIcon()}
             <Text>{option.text}</Text>
-          </HStack>
-        </ModalHeader>
-        <ModalBody>
-          <VStack spacing={4} align="stretch" py={4}>
-            <Text>Earn {option.reward.toLocaleString()} coins</Text>
-            <Button colorScheme="yellow">CLAIM</Button>
+            <Button
+              colorScheme="yellow"
+              boxSize={5}
+              fontSize="8px"
+              rounded={"2xl"}
+            >
+              Subscribe
+            </Button>
+          </VStack>
+          <VStack spacing={4} py={4}>
+            <Text fontSize={"8px"}>YOUR REWARD</Text>
+            <HStack color={"yellow"}>
+              <Image src="./Bitcoin_3D.png" alt="Bitcoin" h={6} />
+              <Text>+ {option.reward.toLocaleString()}</Text>
+            </HStack>
+            <Button colorScheme="yellow" w={"200px"} rounded={"2xl"}>
+              CLAIM
+            </Button>
           </VStack>
         </ModalBody>
       </ModalContent>
@@ -169,7 +183,9 @@ const EarnMoreCoinsScreen: React.FC = () => {
 
   return (
     <Box
+      bgImage="url('./pexels-cottonbro.png')"
       bg="linear-gradient(to bottom, #001a33, #003366)"
+      bgBlendMode={"overlay"}
       minH="100vh"
       p={4}
       color="white"
