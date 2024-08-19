@@ -14,7 +14,7 @@ import { MdHome, MdGroup, MdAssignment } from "react-icons/md";
 import { GiUpgrade, GiPsychicWaves } from "react-icons/gi";
 
 // Placeholder components for different pages
-const Home: React.FC = () => <Text>Home Page Content</Text>;
+const Home: React.FC = () => <Text></Text>;
 const Upgrade: React.FC = () => <Text>Upgrade Page Content</Text>;
 const Friends: React.FC = () => <Text>Friends Page Content</Text>;
 const Tasks: React.FC = () => <Text>Tasks Page Content</Text>;
@@ -122,7 +122,7 @@ const GameInterface: React.FC = () => {
 
         {activePage === "home" && (
           <>
-            <Text textAlign="center" fontWeight="bold">
+            <Text textAlign="center" fontWeight="bold" color={"yellow"}>
               King Kong Mode
             </Text>
             <Flex justify="center" align="center" flex={1}>
@@ -140,7 +140,9 @@ const GameInterface: React.FC = () => {
 
         {renderContent()}
 
-        <Button colorScheme="yellow">UPGRADE MODE</Button>
+        <Button colorScheme="yellow" rounded={"3xl"}>
+          UPGRADE MODE
+        </Button>
       </VStack>
 
       <HStack justify="space-around" p={2} bg="gray.800" as="nav">

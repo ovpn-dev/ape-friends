@@ -38,7 +38,7 @@ const MainMenu: React.FC = () => {
             width="80%"
             rounded={"3xl"}
             as={RouterLink}
-            to={"/apems"}
+            to={"/play"}
           >
             PLAY
           </Button>
