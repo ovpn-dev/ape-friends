@@ -171,9 +171,9 @@ const ApeModeScreen: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #001a33, #003366)"
-      minH="100vh"
       p={4}
       color="white"
+      overflow={"scroll"}
     >
       <VStack spacing={6} align="stretch">
         <HStack justify="center" position="relative">
@@ -188,7 +188,7 @@ const ApeModeScreen: React.FC = () => {
           <Image
             src="./Bitcoin_3D.png" // Ensure this path is correct
             alt="Bitcoin"
-            boxSize={40}
+            boxSize={"90px"}
           />
           <IconButton
             icon={<ChevronRightIcon />}

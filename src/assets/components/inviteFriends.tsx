@@ -22,7 +22,7 @@ const InviteFriendsComponent: React.FC = () => {
   return (
     <Box
       bg="linear-gradient(to bottom, #0D1B2A, #2a4365)"
-      minHeight="100vh"
+      minHeight="auto"
       p={4}
     >
       <VStack spacing={4} align="stretch">

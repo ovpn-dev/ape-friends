@@ -12,13 +12,17 @@ import {
 } from "@chakra-ui/react";
 import { MdHome, MdGroup, MdAssignment } from "react-icons/md";
 import { GiUpgrade, GiPsychicWaves } from "react-icons/gi";
+import ApeModeScreen from "./apeModes";
+import EarnMoreCoinsScreen from "./earnMoreScreen";
+import DashboardScreen from "./user/airdropDash";
+import InviteFriendsComponent from "./inviteFriends";
 
 // Placeholder components for different pages
 const Home: React.FC = () => <Text></Text>;
-const Upgrade: React.FC = () => <Text>Upgrade Page Content</Text>;
-const Friends: React.FC = () => <Text>Friends Page Content</Text>;
-const Tasks: React.FC = () => <Text>Tasks Page Content</Text>;
-const Airdrop: React.FC = () => <Text>Airdrop Page Content</Text>;
+const Upgrade: React.FC = () => <ApeModeScreen />;
+const Friends: React.FC = () => <InviteFriendsComponent />;
+const Tasks: React.FC = () => <EarnMoreCoinsScreen />;
+const Airdrop: React.FC = () => <DashboardScreen />;
 
 type MenuItem = {
   icon: React.ElementType;
@@ -59,7 +63,8 @@ const GameInterface: React.FC = () => {
   return (
     <Box
       bg="gray.900"
-      h="100vh"
+      h="auto"
+      minH={"100vh"}
       color="white"
       display="flex"
       flexDirection="column"
@@ -134,15 +139,14 @@ const GameInterface: React.FC = () => {
                 _hover={{ bg: "cyan.300" }}
                 _active={{ bg: "cyan.500" }}
               />
-            </Flex>
+            </Flex>{" "}
+            <Button colorScheme="yellow" rounded={"3xl"}>
+              UPGRADE MODE
+            </Button>
           </>
         )}
 
         {renderContent()}
-
-        <Button colorScheme="yellow" rounded={"3xl"}>
-          UPGRADE MODE
-        </Button>
       </VStack>
 
       <HStack justify="space-around" p={2} bg="gray.800" as="nav">

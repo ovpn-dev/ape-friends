@@ -186,7 +186,7 @@ const EarnMoreCoinsScreen: React.FC = () => {
       bgImage="url('./pexels-cottonbro.png')"
       bg="linear-gradient(to bottom, #001a33, #003366)"
       bgBlendMode={"overlay"}
-      minH="100vh"
+      minH="auto"
       p={4}
       color="white"
     >
