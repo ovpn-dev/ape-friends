@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   VStack,
@@ -17,7 +17,7 @@ import EarnMoreCoinsScreen from "./earnMoreScreen";
 import DashboardScreen from "./user/airdropDash";
 import InviteFriendsComponent from "./inviteFriends";
 
-// Placeholder components for different pages
+// Define the types for components
 const Home: React.FC = () => <Text></Text>;
 const Upgrade: React.FC = () => <ApeModeScreen />;
 const Friends: React.FC = () => <InviteFriendsComponent />;
@@ -30,15 +30,45 @@ type MenuItem = {
   key: string;
   component: React.FC;
 };
+const levelNames: string[] = [
+  "Spider Monkey",
+  "Chimpanzee",
+  "Orangutan",
+  "Gorilla",
+  "King Kong",
+];
 
 const GameInterface: React.FC = () => {
-  const [balance, setBalance] = useState<number>(350590);
+  const [balance, setBalance] = useState<number>(35590);
   const [energy, setEnergy] = useState<number>(1000);
   const [activePage, setActivePage] = useState<string>("home");
+  const [level, setLevel] = useState<number>(1);
+  const [clicks, setClicks] = useState<number>(0);
 
-  const handleTap = () => {
+  const levelImages: string[] = [
+    "./1SpiderMonkeyAvatar.png",
+    "./2ChimpAvatar.png",
+    "./3BaboonAvatar.png",
+    "./4GorillaAvatar.png",
+    "./5KingKongA.png",
+  ];
+
+  useEffect(() => {
+    const newLevel = Math.min(Math.floor(clicks / 1000) + 1, 5);
+    if (newLevel !== level) {
+      setLevel(newLevel);
+      alert(
+        `Congratulations! You've reached ${
+          levelNames[newLevel - 1]
+        } Mode (Level ${newLevel})!`
+      );
+    }
+  }, [clicks, level]);
+
+  const handleTap = (): void => {
     setBalance((prev) => prev + 1);
     setEnergy((prev) => Math.max(0, prev - 1));
+    setClicks((prev) => prev + 1);
   };
 
   const menuItems: MenuItem[] = [
@@ -54,7 +84,7 @@ const GameInterface: React.FC = () => {
     },
   ];
 
-  const renderContent = () => {
+  const renderContent = (): JSX.Element => {
     const ActiveComponent =
       menuItems.find((item) => item.key === activePage)?.component || Home;
     return <ActiveComponent />;
@@ -72,9 +102,8 @@ const GameInterface: React.FC = () => {
       <VStack spacing={4} align="stretch" p={4} flex={1}>
         <VStack justify="space-between">
           <HStack>
-            {/* <Icon as={FaBitcoin} color="orange.400" boxSize={6} /> */}
             <Image
-              src="./Bitcoin_3D.png" // Ensure this path is correct
+              src="./Bitcoin_3D.png"
               alt="Bitcoin"
               boxSize="35px"
               alignSelf="center"
@@ -94,11 +123,7 @@ const GameInterface: React.FC = () => {
               <VStack p={5}>
                 <Text fontSize={"8px"}>EARN PER TAP</Text>
                 <Flex align={"center"}>
-                  <Image
-                    src="./Bitcoin_3D.png" // Ensure this path is correct
-                    alt="Bitcoin"
-                    boxSize="20px"
-                  />
+                  <Image src="./Bitcoin_3D.png" alt="Bitcoin" boxSize="20px" />
                   +1
                 </Flex>
               </VStack>
@@ -113,11 +138,7 @@ const GameInterface: React.FC = () => {
               <VStack p={5}>
                 <Text fontSize={"8px"}> ENERGY</Text>
                 <Flex align={"center"}>
-                  <Image
-                    src="./Bitcoin_3D.png" // Ensure this path is correct
-                    alt="Bitcoin"
-                    boxSize="20px"
-                  />
+                  <Image src="./Bitcoin_3D.png" alt="Bitcoin" boxSize="20px" />
                   {energy}/{1000}
                 </Flex>
               </VStack>
@@ -128,18 +149,31 @@ const GameInterface: React.FC = () => {
         {activePage === "home" && (
           <>
             <Text textAlign="center" fontWeight="bold" color={"yellow"}>
-              Spider Monkey Mode (Level 1)
+              {levelNames[level - 1]} Mode (Level {level})
             </Text>
-            <Flex justify="center" align="center" flex={1}>
+            <Flex justify="center" align="center" flex={1} direction="column">
               <Circle
                 size="200px"
-                bg="cyan.400"
+                bg="purple.700"
                 as="button"
                 onClick={handleTap}
-                _hover={{ bg: "cyan.300" }}
-                _active={{ bg: "cyan.500" }}
-              />
-            </Flex>{" "}
+                _hover={{ bg: "purple.500" }}
+                _active={{ bg: "cyan.300" }}
+                overflow="hidden"
+                border={"10px solid"}
+                borderColor={"purple.900"}
+              >
+                <Image
+                  src={levelImages[level - 1]}
+                  alt={`Level ${level}`}
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                />
+              </Circle>
+              <Text mt={4}>Clicks: {clicks}</Text>
+              <Text>Next Level: {Math.min(level * 1000, 5000)} clicks</Text>
+            </Flex>
             <Button colorScheme="yellow" rounded={"3xl"}>
               UPGRADE MODE
             </Button>

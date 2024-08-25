@@ -19,18 +19,19 @@ interface Mode {
   process: string[];
   pros: string[];
   cons: string[];
+  image: string; // Add the image property here
 }
 
 // Mode data
 const modeData: Mode[] = [
   {
-    title: "King Kong Mode",
-    version: "Version 1",
+    title: "Spider Monkey",
+    version: "Level 1",
     overview:
-      "This mode allows any member of the chat to propose a capital allocation (CA) for investment or trading.",
+      "Fast and clever, Spider Monkey is the go-to expert for fixing problems quickly.",
     process: [
-      "A member initiates a proposal without needing prior consent from other members.",
-      "The group aims to collectively match the standard buy amount agreed upon previously.",
+      "He swings from company to company, helping businesses get back on track with his sharp thinking and quick solutions. ",
+      "Always on the move, he's the guy you call when things get tricky.",
     ],
     pros: [
       "Fast decision-making and execution.",
@@ -40,16 +41,17 @@ const modeData: Mode[] = [
       "Potential for impulsive decisions without thorough consultation.",
       "Risk of misalignment with the group's overall investment strategy.",
     ],
+    image: "./1SpiderMonkeyAvatar.png",
   },
   {
-    title: "Full Ape Mode",
-    version: "SECOND MODE",
+    title: "Chimpanzee",
+    version: "Level 2",
     overview:
-      "This mode builds on King Kong Mode, adding a layer of consent based on contributor status and reactions.",
+      "Known for his brainpower, Chimpanzee is the master of making deals. ",
     process: [
-      "Any member can propose a trade, similar to King Kong Mode.",
-      "The trade will only be executed if:",
-      "The proposer is a contributor to the pool, or",
+      "He's the one who smooth-talks his way through meetings, ",
+      "getting the best deals for his company while keeping everyone calm and happy.",
+      "His smart strategies make him a valuable asset in any negotiation.",
       "At least one contributor reacts positively with designated emojis (🍌, 🦍, 🚀).",
     ],
     pros: [
@@ -60,41 +62,58 @@ const modeData: Mode[] = [
       "Still susceptible to hasty decisions, especially if the proposer is not well-informed.",
       "Reliance on emoji reactions may lead to unclear or superficial agreements.",
     ],
+    image: "./2ChimpAvatar.png",
   },
   {
-    title: "Smart Ape",
-    version: "THIRD MODE",
+    title: "Baboon",
+    version: "Level 3",
     overview:
-      "This mode introduces a requirement for consensus based on the financial stake of contributors.",
+      "Baboon charges into businesses, taking over and cutting out what doesn't work.",
     process: [
-      "Proposals can be made as in the previous modes.",
-      "A trade will only proceed if at least half of the contributors (by dollar amount) agree to it.",
+      "He's tough and doesn't hold back when it comes to making changes.",
+      "In the corporate world,",
     ],
     pros: [
-      "Encourages more thoughtful discussion and consideration of the proposal.",
-      "Ensures that those with a larger financial stake have a significant say in decision-making.",
+      "Baboon is the guy who gets things done,",
+      "even if it means breaking a few rules.",
     ],
     cons: [
       "May slow down the decision-making process due to the need for agreement.",
       "Risk of deadlock if contributors have differing opinions.",
     ],
+    image: "./3BaboonAvatar.png",
   },
   {
-    title: "Chimp",
-    version: "FOURTH MODE",
-    overview:
-      "This mode requires unanimous consent from all contributors before executing a trade.",
+    title: "Gorilla",
+    version: "Level 4",
+    overview: "Strong and steady, Gorilla keeps everyone in line.",
     process: [
-      "Any member can propose a trade, but it will only go forward if every contributor agrees.",
+      "He makes sure things run smoothly and that people follow the rules.",
     ],
     pros: [
-      "Ensures that all voices are heard and that everyone is on board with the decision.",
-      "Reduces the risk of conflicts and dissatisfaction among contributors.",
+      "When things get out of control,",
+      "Gorilla steps in to bring order and make sure the company stays on course.",
     ],
     cons: [
       "Can lead to significant delays in decision-making, especially in larger groups.",
       "Risk of inaction if there are disagreements, potentially missing out on market opportunities.",
     ],
+    image: "./4GorillaAvatar.png",
+  },
+  {
+    title: "King Kong",
+    version: "Level 5",
+    overview: "The biggest and strongest of them all,",
+    process: ["King Kong is the ultimate CEO."],
+    pros: [
+      "He built his company from nothing and now rules over an empire.",
+      "When King Kong makes a decision, everyone listens.",
+    ],
+    cons: [
+      "His power is unmatched",
+      ", and he's the king of the corporate world.",
+    ],
+    image: "./5KingKongA.png",
   },
   // Add more modes here as needed
 ];
@@ -169,6 +188,7 @@ const ApeModeScreen: React.FC = () => {
     );
   };
 
+  const currentMode = modeData[currentModeIndex];
   return (
     <Box
       bg="linear-gradient(to bottom, #001a33, #003366)"
@@ -187,9 +207,9 @@ const ApeModeScreen: React.FC = () => {
             variant={"simple"}
           />
           <Image
-            src="./Bitcoin_3D.png" // Ensure this path is correct
-            alt="Bitcoin"
-            boxSize={"90px"}
+            src={currentMode.image} // Use the image from the current mode
+            alt={currentMode.title}
+            boxSize={"150px"}
           />
           <IconButton
             icon={<ChevronRightIcon />}

@@ -19,7 +19,7 @@ const HeroScreen: React.FC = () => {
   useEffect(() => {
     if (!isLoading) {
       const redirectTimer = setTimeout(() => {
-        navigate("/mainmenu"); // Replace with your actual main menu route
+        navigate("/play"); // Replace with your actual main menu route
       }, 2000); // 2000 milliseconds = 2 seconds
 
       return () => clearTimeout(redirectTimer);

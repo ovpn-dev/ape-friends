@@ -1,5 +1,5 @@
 import "./App.css";
-import AppScreen from "./assets/components/appScreen";
+// import AppScreen from "./assets/components/appScreen";
 import Nav from "./assets/components/nav";
 import HeroScreen from "./assets/components/heroScreen";
 import EarnMoreCoinsScreen from "./assets/components/earnMoreScreen";
@@ -32,12 +32,12 @@ function App() {
     <>
       {showNavbar && <Nav />}
       <Routes>
-        <Route path="/" element={<AppScreen />} />
+        <Route path="/" element={<HeroScreen />} />
         <Route path="/signup" element={<HeroScreen />} />
         <Route path="/dashboard" element={<AnalyticsComponent />} />
         <Route path="/login" element={<AdminLoginComponent />} />
         <Route path="/forgetpaswd" element={<PasswordRecovery />} />
-        <Route path="/hero" element={<HeroScreen />} />
+        {/* <Route path="/hero" element={<HeroScreen />} /> */}
         <Route path="/csc" element={<ComingSoonComponent />} />
         <Route path="/emcs" element={<EarnMoreCoinsScreen />} />
         <Route path="/apems" element={<ApeModeScreen />} />
